@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lab2-build-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab2-dockerfile
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        run: docker build -t hello-docker:ci .
+
+      - name: Run container
+        run: docker run -d --name hello -p 3000:3000 hello-docker:ci
+
+      - name: Wait for app
+        run: |
+          for i in {1..20}; do
+            if curl -fsS http://localhost:3000 >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          echo "App not responding"; docker logs hello; exit 1
+
+      - name: Show logs
+        if: always()
+        run: docker logs hello || true
