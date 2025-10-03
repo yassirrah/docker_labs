@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: lab2-dockerfile
+        working-directory: lab2_dockerFile
     steps:
       - uses: actions/checkout@v4
 
