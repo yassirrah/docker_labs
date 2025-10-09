@@ -12,11 +12,11 @@ Learn the basics of working with Docker images and containers:
 
 ## 📥 Step 1 – Pull an Image
 docker pull nginx:alpine
-![alt text](image.png)
+![alt text](screenshots/image-0.png)
 
 ## Step 2 – Run a Container
 docker run -d --name web -p 8080:80 nginx:alpine
-![alt text](image-1.png)`
+![alt text](screenshots/image-1.png)`
 
 -d → detached mode (runs in background)
 
@@ -32,14 +32,14 @@ nginx:alpine → image to run
 docker ps                  # list running containers
 docker logs web            # view logs of container
 docker exec -it web sh     # open interactive shell
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](screenshots/image-2.png)
+![alt text](screenshots/image-3.png)
+![alt text](screenshots/image-4.png)
 
 ## 🛑 Step 4 – Stop and Remove
 docker stop web
 docker rm web
-![alt text](image-5.png)
+![alt text](screenshots/image-5.png)
 
 ## 🧹 Step 5 – Remove Image
 docker rmi nginx:alpine

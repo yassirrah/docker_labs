@@ -29,7 +29,7 @@
 docker volume create pgdata
 docker volume ls
 
-![alt text](image.png)
+![alt text](screenshots/image-0.png)
 
 ### 2) Run Postgres with the volume
 docker run -d --name pg \
@@ -40,14 +40,14 @@ docker run -d --name pg \
   -p 5432:5432 \
   postgres:16
 
-  ![alt text](image-1.png)
+  ![alt text](screenshots/image-1.png)
 
 ### 3) Verify DB is reachable (optional inside container)
 docker exec -it pg psql -U app -d appdb -c "CREATE TABLE notes(id serial primary key, txt text);"
 docker exec -it pg psql -U app -d appdb -c "INSERT INTO notes(txt) VALUES ('hello volume');"
 docker exec -it pg psql -U app -d appdb -c "SELECT * FROM notes;"
 
-![alt text](image-2.png)
+![alt text](screenshots/image-2.png)
 
 ### 4) Prove persistence
 docker rm -f pg
@@ -62,7 +62,7 @@ docker run -d --name pg \
 # Your table & rows should still exist:
 docker exec -it pg psql -U app -d appdb -c "SELECT * FROM notes;"
 
-![alt text](image-3.png)
+![alt text](screenshots/image-3.png)
 
 Takeaway: Data survives container removal because it lives in the pgdata volume.
 
@@ -76,19 +76,19 @@ docker run -d --name web \
   -v "$PWD/site":/usr/share/nginx/html:ro \
   nginx:alpine
 
-![alt text](image-4.png)
+![alt text](screenshots/image-4.png)
 
 ### 3) Test in browser / curl
 curl http://localhost:8080
 # => hi
-![alt text](image-5.png)
+![alt text](screenshots/image-5.png)
 
 ### 4) Live-edit and refresh
 printf "<h1>Hello, bind mount 🔥</h1>\n" > site/index.html
 curl http://localhost:8080
 # => updated HTML immediately
 
-![alt text](image-6.png)
+![alt text](screenshots/image-6.png)
 
 
 ### Takeaway: Files you edit on your host appear instantly in the container.

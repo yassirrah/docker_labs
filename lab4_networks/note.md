@@ -32,7 +32,7 @@ docker run --rm -it --network app-net alpine sh -lc \
   "apk add --no-cache redis-cli >/dev/null; redis-cli -h cache PING"
 # Expected: PONG
 ✅ Result: Containers on the same user-defined network can resolve each other by container name.
-![alt text](screenshots/image.png)
+![alt text](screenshots/image-0.png)
 
 
 ### 🧱 Part B — App ↔ Database Communication
@@ -46,17 +46,15 @@ lab4-networking/
 ## 2️⃣ Build and run
 docker build -t net-demo:1.0 .
 
-![alt text](image.png)
-
 docker run -d --name app --network app-net -p 3000:3000 net-demo:1.0
 
-![alt text](image-1.png)
+![alt text](screenshots/image-2.png)
 
 ## 3️⃣ Test
 curl http://localhost:3000
 # Expected: Redis says: PONG
 
-![alt text](image-2.png)
+![alt text](screenshots/image-3.png)
 
 ✅ Result: The Node.js app communicates with Redis through Docker’s internal DNS (by the name cache).
 
@@ -80,7 +78,7 @@ docker inspect app | grep -A3 -n '"Networks"'
 ### or you can use the command 
 docker inspect app --format '{{json .NetworkSettings.Networks}}' | jq
 
-![alt text](image.png)
+![alt text](screenshots/image-4.png)
 
 
 ✅ Result: Containers can belong to multiple networks and have multiple DNS identities.
