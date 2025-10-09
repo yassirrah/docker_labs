@@ -11,7 +11,7 @@ Thumbs.db
 # Docker
 *.tgz
 *.tar
-**/screenshots/
+!**/screenshots/
 
 # Editors/IDE
 .vscode/

@@ -1,4 +1,4 @@
-![CI](https://github.com/yassirrah/docker-labs/actions/workflows/ci.yaml/badge.svg)
+![CI](https://github.com/yassirrah/docker_labs/actions/workflows/ci.yaml/badge.svg)
 
 
 
