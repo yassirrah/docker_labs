@@ -12,7 +12,7 @@ Learn how to:
 ## 🛠️ Step 1 – Build Image
 docker build -t hello-docker:1.0.0 .
 
-![alt text](image.png)
+![alt text](screenshots/image-0.png)
 
 ## 🚀 Step 2 – Run Container
 docker run -d --name hello -p 3000:3000 hello-docker:1.0.0
@@ -25,20 +25,20 @@ Test with:
 curl http://localhost:3000
 # Output: Hello Docker 🐳
 
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 
 ## 🔎 Step 3 – Inspect Logs
 docker logs hello
 # Should show: Listening on http://0.0.0.0:3000
 
-![alt text](image-2.png)
+![alt text](screenshots/image-2.png)
 
 ## 🛑 Step 4 – Cleanup
 docker stop hello
 docker rm hello
 docker rmi hello-docker:1.0.0
 
-![alt text](image-3.png)
+![alt text](screenshots/image-3.png)
 
 
 ✅ Key Takeaways
