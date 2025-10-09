@@ -1,31 +1,66 @@
 ![CI](https://github.com/yassirrah/docker_labs/actions/workflows/ci.yaml/badge.svg)
 
+# 🐳 Docker Labs — Yassir Rahdouni
 
+Hands-on labs to learn **Docker and DevOps fundamentals** from zero to practical use.  
+Each lab includes commands, explanations, troubleshooting notes, and screenshots.
 
-# 🐳 Docker Labs — Yassir
+---
 
-Hands-on labs to learn Docker from zero to practical use. Each lab includes
-commands, explanations, and screenshots.
+## 📚 Labs Progress
 
-## 📚 Labs
-- [Lab 1 — Images & Containers](./lab1_images_containers/notes.md)
-- [Lab 2 — Build Your Own Image (Node.js)](./lab2_dockerfile/notes.md)
-- [Lab 3 — Storage: Volumes vs Bind Mounts](./lab3_storage/notes.md)
+| Lab | Title | Status |
+|-----|--------|--------|
+| 🧩 [Lab 1 — Images & Containers](./lab1_images_containers/notes.md) | Running, inspecting, and managing containers | ✅ Completed |
+| 🧱 [Lab 2 — Build Your Own Image (Node.js)](./lab2_dockerfile/notes.md) | Writing Dockerfiles, building and running custom images | ✅ Completed |
+| 💾 [Lab 3 — Storage: Volumes & Bind Mounts](./lab3_storage/notes.md) | Persistent data and development mounts | ✅ Completed |
+| 🌐 [Lab 4 — Networking & Service Discovery](./lab4_networking/notes.md) | Container-to-container communication using user-defined networks | ✅ Completed |
+| ⚙️ Lab 5 — Docker Compose *(Next)* | Managing multi-container applications with one YAML file | 🔜 In Progress |
+| 🚀 CI/CD — Build & Publish to Docker Hub | GitHub Actions pipeline | ✅ Working |
 
-## ✅ What you’ll learn
-- Running & inspecting containers
-- Writing Dockerfiles (multi-stage)
-- Port mapping & service exposure
-- Volumes vs bind mounts
-- Bonus: CI pipeline that builds & tests Lab 2
+---
 
-## 🧪 CI Status
-CI builds the Lab 2 image and verifies the container responds on port 3000.
+## ✅ What You’ll Learn
+- Container fundamentals: build, run, inspect, and remove  
+- Writing efficient **Dockerfiles** (multi-stage builds)  
+- **Port mapping** & service exposure  
+- **Volumes vs Bind Mounts** for data persistence  
+- **Networking & DNS discovery** between containers  
+- **Docker Compose** for multi-service stacks  
+- **CI/CD automation** with GitHub Actions and Docker Hub publishing  
 
-> See `.github/workflows/ci.yaml`.
+---
+
+## 🧪 Continuous Integration (CI)
+This repository includes a **GitHub Actions pipeline** that:
+1. Builds and tests the Lab 2 Node.js image.  
+2. Verifies the app responds on port 3000.  
+3. Publishes to Docker Hub on push to `main` or tagged releases.
+
+> See [`.github/workflows/ci.yaml`](.github/workflows/ci.yaml)
+
+---
 
 ## 📸 Screenshots
-Key results are shown in each lab’s `screenshots/` folder.
+Key results and terminal captures are stored in each lab’s  
+[`screenshots/`](./lab1_images_containers/screenshots) folders.
+
+If the folders don’t appear on GitHub, check `.gitignore` or add a `.gitkeep` placeholder.
+
+---
+
+## 🧭 Next Steps
+- ✅ Push Labs 1-4 with updated notes and screenshots  
+- 🔜 Add Lab 5: `docker-compose.yml` to orchestrate app + database  
+- 🌍 Extend CI/CD to test multi-service builds  
+- 🧰 Deploy containers to the cloud (Docker Hub / AWS ECS / Azure Containers)
+
+---
 
 ## 📝 License
 MIT — see [LICENSE](./LICENSE).
+
+---
+
+**Author:** Yassir Rahdouni  
+📧 [LinkedIn](https://www.linkedin.com/in/yassir-rahdouni-0b6926168/) | 🐙 [GitHub](https://github.com/yassirrah)
