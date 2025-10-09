@@ -8,9 +8,9 @@ Hands-on labs to learn Docker from zero to practical use. Each lab includes
 commands, explanations, and screenshots.
 
 ## 📚 Labs
-- [Lab 1 — Images & Containers](./lab1-images-containers/notes.md)
-- [Lab 2 — Build Your Own Image (Node.js)](./lab2-dockerfile/notes.md)
-- [Lab 3 — Storage: Volumes vs Bind Mounts](./lab3-storage/notes.md)
+- [Lab 1 — Images & Containers](./lab1_images_containers/notes.md)
+- [Lab 2 — Build Your Own Image (Node.js)](./lab2_dockerfile/notes.md)
+- [Lab 3 — Storage: Volumes vs Bind Mounts](./lab3_storage/notes.md)
 
 ## ✅ What you’ll learn
 - Running & inspecting containers
