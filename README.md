@@ -45,16 +45,6 @@ This repository includes a **GitHub Actions pipeline** that:
 Key results and terminal captures are stored in each lab’s  
 [`screenshots/`](./lab1_images_containers/screenshots) folders.
 
-If the folders don’t appear on GitHub, check `.gitignore` or add a `.gitkeep` placeholder.
-
----
-
-## 🧭 Next Steps
-- ✅ Push Labs 1-4 with updated notes and screenshots  
-- 🔜 Add Lab 5: `docker-compose.yml` to orchestrate app + database  
-- 🌍 Extend CI/CD to test multi-service builds  
-- 🧰 Deploy containers to the cloud (Docker Hub / AWS ECS / Azure Containers)
-
 ---
 
 ## 📝 License
