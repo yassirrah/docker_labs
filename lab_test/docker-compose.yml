@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    image: myapp:latest
+    port:
+      - "80:8080"
+    networks:
+      - networkName
+  database:
+    image: postgres:15
+    networks:
+      - networkName
+
+volumes:
+  db-data:
+    
+
+networks:
+  backend-net:
+    driver: overlay
