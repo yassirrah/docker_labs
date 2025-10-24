@@ -58,30 +58,33 @@ client.on('error', (err) => console.log('Redis error:', err));
 
 docker-compose.yml
 
-version: '3.9'
-
 services:
   app:
     build: ./app
-    container_name: app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - cache
     environment:
       - REDIS_HOST=cache
-    networks:
-      - app-net
+    depends_on:
+      cache:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks: [app-net]
 
   cache:
     image: redis:7-alpine
-    container_name: cache
-    networks:
-      - app-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    networks: [app-net]
 
 networks:
   app-net:
     driver: bridge
+
 
 
 
