@@ -37,6 +37,7 @@ lab5_compose/
 ```js
 const http = require('http');
 const { createClient } = require('redis');
+const REDIS_HOST = process.env.REDISHOST || 'localhost';
 
 const client = createClient({ url: 'redis://cache:6379' });
 client.on('error', (err) => console.log('Redis error:', err));
@@ -49,8 +50,9 @@ client.on('error', (err) => console.log('Redis error:', err));
   }).listen(3000, '0.0.0.0', () => console.log('Listening on port 3000'));
 })();
 
+```
 
-🧩 Step 2 – Compose File
+## 🧩 Step 2 – Compose File
 
 docker-compose.yml
 
@@ -81,7 +83,7 @@ networks:
 
 
 
-🔐 Step 3 – Environment File
+### 🔐 Step 3 – Environment File
 
 .env
 
@@ -89,7 +91,7 @@ REDIS_HOST=cache
 NODE_ENV=production
 
 
-▶️ Step 4 – Run the Stack
+### ▶️ Step 4 – Run the Stack
 docker compose up --build
 
 Expected logs:
@@ -106,7 +108,7 @@ curl http://localhost:3000
 ✅ Both services start automatically, share a network, and communicate by name.
 
 
-🧹 Step 5 – Cleanup
+### 🧹 Step 5 – Cleanup
 docker compose down          # Stop containers & remove network
 docker compose down -v       # Remove volumes as well
 
