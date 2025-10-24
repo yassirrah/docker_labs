@@ -39,7 +39,9 @@ const http = require('http');
 const { createClient } = require('redis');
 const REDIS_HOST = process.env.REDISHOST || 'localhost';
 
-const client = createClient({ url: 'redis://cache:6379' });
+const client = createClient({ url: `redis://${REDIS_HOST}:6379` });
+
+
 client.on('error', (err) => console.log('Redis error:', err));
 
 (async () => {
