@@ -15,7 +15,7 @@ Each lab includes commands, explanations, troubleshooting notes, and screenshots
 | 🧱 [Lab 2 — Build Your Own Image (Node.js)](./lab2_dockerFile/notes.md) | Writing Dockerfiles, building and running custom images | ✅ Completed |
 | 💾 [Lab 3 — Storage: Volumes & Bind Mounts](./lab3_volumes/notes.md) | Persistent data and development mounts | ✅ Completed |
 | 🌐 [Lab 4 — Networking & Service Discovery](./lab4_networks/notes.md) | Container-to-container communication using user-defined networks | ✅ Completed |
-| ⚙️ Lab 5 — Docker Compose *(Next)* | Managing multi-container applications with one YAML file | 🔜 In Progress |
+| ⚙️ [Lab 5 — Docker Compose](./lab5_dockerCompose/notes.md) | Managing multi-container applications with one YAML file | ✅ Completed |
 | 🚀 CI/CD — Build & Publish to Docker Hub | GitHub Actions pipeline | ✅ Working |
 
 ---
